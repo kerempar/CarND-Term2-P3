@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <iostream>
 #include <numeric>
+#include <limits>
 #include <math.h> 
 #include <iostream>
 #include <sstream>
@@ -149,7 +150,7 @@ void ParticleFilter::dataAssociation(std::vector<LandmarkObs> predicted, std::ve
     
     //cout << "observation: " << i << " x_obs: " << x_obs << " y_obs: " << y_obs;
     
-    min_distance = LONG_MAX;
+    min_distance = std::numeric_limits<double>::max();
     
     // find the nearest landmark to this observation
     for (int j=0; j < predicted.size(); j++)  {
